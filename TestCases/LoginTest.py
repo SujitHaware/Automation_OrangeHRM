@@ -1,7 +1,8 @@
 import unittest
 import HtmlTestRunner
 from selenium import webdriver
-from PageObjects import LoginPage
+from pageObjects import LoginPage
+
 
 class TestLogin(unittest.TestCase):
     baseURL = 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'
@@ -27,12 +28,8 @@ class TestLogin(unittest.TestCase):
         act_title = self.driver.title
         lp.clickUser()
         lp.clickLogout()
-        self.assertEqual(act_title,'OrangeHRM','Title not match')
+        self.assertEqual(act_title, 'OrangeHRM', 'Title not match')
+
 
 if __name__ == '__main__':
     unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output='..\\Reports'))
-
-
-
-
-
