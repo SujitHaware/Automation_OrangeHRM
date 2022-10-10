@@ -1,8 +1,11 @@
+import sys
 import unittest
+
 import HtmlTestRunner
 from selenium import webdriver
-from pageObjects import LoginPage
 
+sys.path.append('C:/Users/Sujitkumar Haware/Desktop/Sujit/Automation Testing/Automation_OrangeHRM')
+from PageObj.LoginPage import LoginPage
 
 class TestLogin(unittest.TestCase):
     baseURL = 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'
@@ -21,7 +24,7 @@ class TestLogin(unittest.TestCase):
         cls.driver.close()
 
     def test_login(self):
-        lp = LoginPage.LoginPage(self.driver)
+        lp = LoginPage(self.driver)
         lp.setUsername(self.username)
         lp.setPassword(self.password)
         lp.clickLogin()
@@ -32,4 +35,4 @@ class TestLogin(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output='..\\Reports'))
+    unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output='C:\\Users\\Sujitkumar Haware\\Desktop\\Sujit\\Automation Testing\\Automation_OrangeHRM\\Reports'))

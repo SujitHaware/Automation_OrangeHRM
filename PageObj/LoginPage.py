@@ -4,6 +4,8 @@ class LoginPage():
     button_login_xpath = '//button[@type="submit"]'
     dropdown_user_xpath = '//p[@class="oxd-userdropdown-name"]'
     link_logout_linktext = 'Logout'
+    button_addEmp_xpath = '//*[@id="app"]/div[1]/div[2]/div[2]/div/div[2]/div[1]/button'
+
 
     def __init__(self, driver):
         self.driver = driver
